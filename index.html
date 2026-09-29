@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en" data-visual-style="atomic-orbit" data-style-version="0.3.0">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="A customer-safe front door for Haworth and Microsoft joint projects and governed resource handoffs.">
+  <link rel="icon" href="data:,">
+  <title>Haworth AI and Premium Forward</title>
+  <script>
+    (() => {
+      const requested = new URLSearchParams(window.location.search).get("scoutTheme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = requested === "light" || requested === "dark"
+        ? requested
+        : (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --cp-bg: #ffffff;
+      --cp-bg-elevated: #eaf3ff;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #eaf3ff;
+      --cp-border: #a9bdd6;
+      --cp-border-strong: #607d9f;
+      --cp-text: #142d4e;
+      --cp-text-muted: #345377;
+      --cp-text-soft: #425f82;
+      --cp-accent: #0057b8;
+      --cp-accent-hover: #003b7a;
+      --cp-accent-soft: rgba(0, 87, 184, 0.12);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #127045;
+      --cp-danger: #9f2a2a;
+      --cp-warning: #7a5200;
+      --cp-link: #003b7a;
+      --cp-shadow: 0 12px 30px rgba(20, 45, 78, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.92);
+      --cp-panel: rgba(255, 255, 255, 0.96);
+      --cp-panel-strong: #ffffff;
+      --cp-sheen: rgba(234, 243, 255, 0.8);
+      --cp-highlight: rgba(0, 87, 184, 0.1);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --cp-bg: #0d1e33;
+      --cp-bg-elevated: #102a48;
+      --cp-surface: #173655;
+      --cp-surface-soft: #1d4269;
+      --cp-border: #4f7095;
+      --cp-border-strong: #83a5ca;
+      --cp-text: #ffffff;
+      --cp-text-muted: #cadcf0;
+      --cp-text-soft: #b4cce6;
+      --cp-accent: #78b7ff;
+      --cp-accent-hover: #a7d1ff;
+      --cp-accent-soft: rgba(120, 183, 255, 0.18);
+      --cp-accent-fg: #0d1e33;
+      --cp-success: #75d7a5;
+      --cp-danger: #ffaaaa;
+      --cp-warning: #ffd07a;
+      --cp-link: #9cc7ff;
+      --cp-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+      --cp-overlay: rgba(13, 30, 51, 0.92);
+      --cp-panel: rgba(23, 54, 85, 0.96);
+      --cp-panel-strong: #173655;
+      --cp-sheen: rgba(255, 255, 255, 0.06);
+      --cp-highlight: rgba(120, 183, 255, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 0;
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--cp-bg);
+      color: var(--cp-text);
+      font: 16px/1.58 "Segoe UI", Aptos, Calibri, sans-serif;
+    }
+
+    a {
+      color: var(--cp-link);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--cp-accent);
+      outline-offset: 3px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 1.25rem;
+      font-size: clamp(2.6rem, 6vw, 5.5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.45rem);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 100;
+      padding: 0.75rem 1rem;
+      transform: translateY(-180%);
+      border-radius: 0.25rem;
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--cp-border);
+      background: var(--cp-panel-strong);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .identity {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--cp-text);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .identity span + span {
+      padding-left: 0.7rem;
+      border-left: 1px solid var(--cp-border);
+    }
+
+    .identity small {
+      color: var(--cp-text-muted);
+      font-size: 0.78rem;
+      font-weight: 650;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a,
+    .theme-button {
+      padding: 0.55rem 0.75rem;
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+      background: transparent;
+      color: var(--cp-text);
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .site-nav a:hover,
+    .theme-button:hover,
+    .site-nav [aria-current="page"] {
+      border-color: var(--cp-border);
+      background: var(--cp-surface-soft);
+    }
+
+    .hero {
+      padding: clamp(4.5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 6.5rem);
+      background: var(--cp-bg-elevated);
+    }
+
+    .eyebrow {
+      margin-bottom: 1rem;
+      color: var(--cp-accent);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-summary {
+      max-width: 780px;
+      margin-bottom: 1.75rem;
+      color: var(--cp-text-muted);
+      font-size: clamp(1.12rem, 2.5vw, 1.42rem);
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--cp-border-strong);
+      border-radius: 0.25rem;
+      background: var(--cp-surface);
+      color: var(--cp-text);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      border-color: var(--cp-accent);
+      background: var(--cp-surface-soft);
+    }
+
+    .button.primary {
+      border-color: var(--cp-accent);
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+    }
+
+    .button.primary:hover {
+      background: var(--cp-accent-hover);
+    }
+
+    .status-note {
+      max-width: 780px;
+      margin-top: 1.35rem;
+      padding-left: 1rem;
+      border-left: 4px solid var(--cp-accent);
+      color: var(--cp-text-muted);
+    }
+
+    .accent-divider {
+      height: 8px;
+      background: var(--cp-accent);
+    }
+
+    .section {
+      padding: clamp(3.75rem, 8vw, 6rem) 0;
+      border-bottom: 1px solid var(--cp-border);
+    }
+
+    .section-intro {
+      max-width: 740px;
+      color: var(--cp-text-muted);
+      font-size: 1.08rem;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 2rem;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.35rem;
+      background: var(--cp-surface);
+      box-shadow: var(--cp-shadow);
+    }
+
+    .journey-step {
+      min-width: 0;
+      padding: 1.5rem;
+    }
+
+    .journey-step + .journey-step {
+      border-left: 1px solid var(--cp-border);
+    }
+
+    .step-number {
+      display: grid;
+      width: 2.2rem;
+      height: 2.2rem;
+      margin-bottom: 1.1rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      font-weight: 850;
+    }
+
+    .availability {
+      background: var(--cp-bg-elevated);
+    }
+
+    .availability-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(270px, 0.7fr);
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .availability-panel {
+      padding: 1.5rem;
+      border: 1px solid var(--cp-border);
+      border-top: 6px solid var(--cp-accent);
+      border-radius: 0.35rem;
+      background: var(--cp-surface);
+    }
+
+    .label {
+      margin-bottom: 0.45rem;
+      color: var(--cp-accent);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .disclosure {
+      padding: 1.15rem 0;
+      background: var(--cp-text);
+      color: var(--cp-bg);
+    }
+
+    .disclosure p {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      padding: 2rem 0;
+      color: var(--cp-text-muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 800px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem 0;
+      }
+
+      .site-nav {
+        justify-content: flex-start;
+      }
+
+      .availability-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .identity {
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .identity small {
+        flex-basis: 100%;
+      }
+
+      .site-nav {
+        width: 100%;
+      }
+
+      .site-nav a,
+      .theme-button {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 3.75rem;
+      }
+
+      .journey-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-step + .journey-step {
+        border-top: 1px solid var(--cp-border);
+        border-left: 0;
+      }
+
+      .actions .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      :root {
+        --cp-bg: #ffffff;
+        --cp-bg-elevated: #ffffff;
+        --cp-surface: #ffffff;
+        --cp-text: #142d4e;
+        --cp-text-muted: #345377;
+      }
+
+      .site-nav,
+      .theme-button,
+      .skip-link {
+        display: none;
+      }
+
+      .hero,
+      .section {
+        padding: 2rem 0;
+      }
+
+      .journey-grid,
+      .availability-panel {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      a {
+        color: #003b7a;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="identity" href="index.html" aria-label="Haworth and Microsoft: AI and Premium Forward home">
+        <span>Haworth</span>
+        <span>Microsoft</span>
+        <small>AI and Premium Forward</small>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
+        <button class="theme-button" id="theme-toggle" type="button" aria-pressed="false">Switch theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <p class="eyebrow">Joint engagement front door</p>
+        <h1 id="page-title">Haworth AI and Premium Forward</h1>
+        <p class="hero-summary" data-claim-id="frontdoor-purpose">One customer-safe entry point for current Haworth and Microsoft joint projects and governed resource handoffs.</p>
+        <div class="actions">
+          <a class="button primary" href="projects.html">Explore current projects</a>
+          <a class="button" href="#resources">How resources are shared</a>
+        </div>
+        <p class="status-note" data-claim-id="plan-status">Project details are working plans subject to joint validation. Proposed work is not represented as approved, delivered, or ready to scale.</p>
+      </div>
+    </section>
+    <div class="accent-divider" aria-hidden="true"></div>
+
+    <section class="section" aria-labelledby="journey-heading">
+      <div class="wrap">
+        <p class="eyebrow">How to use this hub</p>
+        <h2 id="journey-heading">Find the right lane with fewer assumptions</h2>
+        <p class="section-intro" data-claim-id="journey-instruction">Start with the portfolio, match the outcome to the work at hand, then use only the next action shown for that lane.</p>
+        <div class="journey-grid">
+          <section class="journey-step" aria-labelledby="orient-title">
+            <div class="step-number" aria-hidden="true">1</div>
+            <h3 id="orient-title">Orient</h3>
+            <p data-claim-id="journey-orient">See each project outcome, its proposed state, the work underway, and the next checkpoint.</p>
+          </section>
+          <section class="journey-step" aria-labelledby="choose-title">
+            <div class="step-number" aria-hidden="true">2</div>
+            <h3 id="choose-title">Choose</h3>
+            <p data-claim-id="journey-choose">Select Executive Activation, Sales, or review the access status of the existing Sales Premium resource center.</p>
+          </section>
+          <section class="journey-step" aria-labelledby="access-title">
+            <div class="step-number" aria-hidden="true">3</div>
+            <h3 id="access-title">Continue safely</h3>
+            <p data-claim-id="journey-access">Follow the stated checkpoint. Working documents and recordings are not exposed through this route.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section availability" id="resources" aria-labelledby="available-heading">
+      <div class="wrap availability-inner">
+        <div>
+          <p class="eyebrow">Access review pending</p>
+          <h2 id="available-heading" data-claim-id="availability-heading">Existing Sales Premium resource center — access review pending</h2>
+          <p class="section-intro" data-claim-id="availability-resource">The existing customer resource center is being reviewed before it is linked from this hub.</p>
+        </div>
+        <div class="availability-panel">
+          <p class="label">Access-unverified reference</p>
+          <h3>Haworth Sales Premium</h3>
+          <p data-claim-id="availability-use">Owner attestation and content review are required before any link is enabled.</p>
+          <p class="label">Link withheld</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="disclosure" aria-label="Public content disclosure">
+      <div class="wrap">
+        <p data-claim-id="public-disclosure">This public page contains no confidential resources. Restricted working materials remain outside this route and require separately reviewed access.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap" data-claim-id="footer-status">Haworth and Microsoft working hub · Project status as of September 29, 2026 · Review candidate only</div>
+  </footer>
+
+  <script>
+    (() => {
+      const button = document.getElementById("theme-toggle");
+      const sync = () => button.setAttribute(
+        "aria-pressed",
+        document.documentElement.getAttribute("data-theme") === "dark" ? "true" : "false"
+      );
+      sync();
+      button.addEventListener("click", () => {
+        const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        sync();
+      });
+    })();
+  </script>
+</body>
+</html>

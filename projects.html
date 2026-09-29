@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en" data-visual-style="atomic-orbit" data-style-version="0.3.0">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Customer-safe Haworth and Microsoft project portfolio with governed resource access status.">
+  <link rel="icon" href="data:,">
+  <title>Current projects | Haworth AI and Premium Forward</title>
+  <script>
+    (() => {
+      const requested = new URLSearchParams(window.location.search).get("scoutTheme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = requested === "light" || requested === "dark"
+        ? requested
+        : (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --cp-bg: #ffffff;
+      --cp-bg-elevated: #eaf3ff;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #eaf3ff;
+      --cp-border: #a9bdd6;
+      --cp-border-strong: #607d9f;
+      --cp-text: #142d4e;
+      --cp-text-muted: #345377;
+      --cp-text-soft: #425f82;
+      --cp-accent: #0057b8;
+      --cp-accent-hover: #003b7a;
+      --cp-accent-soft: rgba(0, 87, 184, 0.12);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #127045;
+      --cp-danger: #9f2a2a;
+      --cp-warning: #7a5200;
+      --cp-link: #003b7a;
+      --cp-shadow: 0 12px 30px rgba(20, 45, 78, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.92);
+      --cp-panel: rgba(255, 255, 255, 0.96);
+      --cp-panel-strong: #ffffff;
+      --cp-sheen: rgba(234, 243, 255, 0.8);
+      --cp-highlight: rgba(0, 87, 184, 0.1);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --cp-bg: #0d1e33;
+      --cp-bg-elevated: #102a48;
+      --cp-surface: #173655;
+      --cp-surface-soft: #1d4269;
+      --cp-border: #4f7095;
+      --cp-border-strong: #83a5ca;
+      --cp-text: #ffffff;
+      --cp-text-muted: #cadcf0;
+      --cp-text-soft: #b4cce6;
+      --cp-accent: #78b7ff;
+      --cp-accent-hover: #a7d1ff;
+      --cp-accent-soft: rgba(120, 183, 255, 0.18);
+      --cp-accent-fg: #0d1e33;
+      --cp-success: #75d7a5;
+      --cp-danger: #ffaaaa;
+      --cp-warning: #ffd07a;
+      --cp-link: #9cc7ff;
+      --cp-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+      --cp-overlay: rgba(13, 30, 51, 0.92);
+      --cp-panel: rgba(23, 54, 85, 0.96);
+      --cp-panel-strong: #173655;
+      --cp-sheen: rgba(255, 255, 255, 0.06);
+      --cp-highlight: rgba(120, 183, 255, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 0;
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--cp-bg);
+      color: var(--cp-text);
+      font: 16px/1.58 "Segoe UI", Aptos, Calibri, sans-serif;
+    }
+
+    a {
+      color: var(--cp-link);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--cp-accent);
+      outline-offset: 3px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 1.25rem;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 100;
+      padding: 0.75rem 1rem;
+      transform: translateY(-180%);
+      border-radius: 0.25rem;
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--cp-border);
+      background: var(--cp-panel-strong);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .identity {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--cp-text);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .identity span + span {
+      padding-left: 0.7rem;
+      border-left: 1px solid var(--cp-border);
+    }
+
+    .identity small {
+      color: var(--cp-text-muted);
+      font-size: 0.78rem;
+      font-weight: 650;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a,
+    .theme-button {
+      padding: 0.55rem 0.75rem;
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+      background: transparent;
+      color: var(--cp-text);
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .site-nav a:hover,
+    .theme-button:hover,
+    .site-nav [aria-current="page"] {
+      border-color: var(--cp-border);
+      background: var(--cp-surface-soft);
+    }
+
+    .portfolio-hero {
+      padding: clamp(4rem, 8vw, 6.5rem) 0 3.5rem;
+      background: var(--cp-bg-elevated);
+    }
+
+    .eyebrow,
+    .lane {
+      color: var(--cp-accent);
+      font-size: 0.8rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-summary {
+      max-width: 790px;
+      color: var(--cp-text-muted);
+      font-size: clamp(1.08rem, 2.2vw, 1.3rem);
+    }
+
+    .hero-back {
+      display: inline-flex;
+      margin-top: 1.25rem;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 800;
+    }
+
+    .accent-divider {
+      height: 8px;
+      background: var(--cp-accent);
+    }
+
+    .portfolio {
+      padding: clamp(3.5rem, 7vw, 5.75rem) 0;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      min-width: 0;
+      padding: 1.6rem;
+      border: 1px solid var(--cp-border);
+      border-top: 7px solid var(--cp-accent);
+      border-radius: 0.35rem;
+      background: var(--cp-surface);
+      box-shadow: var(--cp-shadow);
+    }
+
+    .project-card.supporting {
+      grid-column: 1 / -1;
+      border-top-color: var(--cp-border-strong);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .state-chip {
+      flex: 0 0 auto;
+      padding: 0.3rem 0.55rem;
+      border: 1px solid var(--cp-border-strong);
+      border-radius: 999px;
+      background: var(--cp-surface-soft);
+      color: var(--cp-text);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .project-facts {
+      display: grid;
+      grid-template-columns: minmax(115px, 0.34fr) minmax(0, 1fr);
+      margin: 1.25rem 0 0;
+      border-top: 1px solid var(--cp-border);
+    }
+
+    .project-facts dt,
+    .project-facts dd {
+      min-width: 0;
+      margin: 0;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--cp-border);
+      overflow-wrap: anywhere;
+    }
+
+    .project-facts dt {
+      padding-right: 1rem;
+      color: var(--cp-text-muted);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .next-action {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border-left: 5px solid var(--cp-accent);
+      background: var(--cp-accent-soft);
+    }
+
+    .next-action strong {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 44px;
+      margin-top: 0.8rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--cp-accent);
+      border-radius: 0.25rem;
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: var(--cp-accent-hover);
+    }
+
+    .resources {
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+      border-top: 1px solid var(--cp-border);
+      background: var(--cp-bg-elevated);
+    }
+
+    .resource-note {
+      max-width: 900px;
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--cp-border);
+      border-left: 7px solid var(--cp-accent);
+      border-radius: 0.35rem;
+      background: var(--cp-surface);
+    }
+
+    .resource-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .disclosure {
+      padding: 1.15rem 0;
+      background: var(--cp-text);
+      color: var(--cp-bg);
+    }
+
+    .disclosure p {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      padding: 2rem 0;
+      color: var(--cp-text-muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 800px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem 0;
+      }
+
+      .site-nav {
+        justify-content: flex-start;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.supporting {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .identity {
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .identity small {
+        flex-basis: 100%;
+      }
+
+      .site-nav {
+        width: 100%;
+      }
+
+      .site-nav a,
+      .theme-button {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+
+      .portfolio-hero {
+        padding-top: 3.5rem;
+      }
+
+      .card-header {
+        flex-direction: column;
+      }
+
+      .project-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .project-facts dt {
+        padding-bottom: 0.2rem;
+        border-bottom: 0;
+      }
+
+      .project-facts dd {
+        padding-top: 0;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      :root {
+        --cp-bg: #ffffff;
+        --cp-bg-elevated: #ffffff;
+        --cp-surface: #ffffff;
+        --cp-text: #142d4e;
+        --cp-text-muted: #345377;
+      }
+
+      .site-nav,
+      .theme-button,
+      .skip-link {
+        display: none;
+      }
+
+      .portfolio-hero,
+      .portfolio,
+      .resources {
+        padding: 2rem 0;
+      }
+
+      .project-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      a {
+        color: #003b7a;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="identity" href="index.html" aria-label="Haworth and Microsoft: AI and Premium Forward home">
+        <span>Haworth</span>
+        <span>Microsoft</span>
+        <small>AI and Premium Forward</small>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <button class="theme-button" id="theme-toggle" type="button" aria-pressed="false">Switch theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="portfolio-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <p class="eyebrow">Project portfolio</p>
+        <h1 id="page-title" data-claim-id="portfolio-heading">Current projects and resource status</h1>
+        <p class="hero-summary" data-claim-id="portfolio-status">Two proposed discovery lanes are shown beside one access-unverified supporting resource. Each item states what is known, what is underway, and the safe next action as of September 29, 2026.</p>
+        <a class="hero-back" href="index.html">← Return to Haworth AI and Premium Forward</a>
+      </div>
+    </section>
+    <div class="accent-divider" aria-hidden="true"></div>
+
+    <section class="portfolio" aria-label="Haworth project cards">
+      <div class="wrap portfolio-grid">
+        <article class="project-card" data-project-card="executive-activation">
+          <div class="card-header">
+            <div>
+              <p class="lane">Executive experience</p>
+              <h2>Executive Activation</h2>
+            </div>
+            <span class="state-chip">Proposed · Discovery</span>
+          </div>
+          <dl class="project-facts">
+            <dt>Lane</dt>
+            <dd data-claim-id="exec-lane">Executive Activation</dd>
+            <dt>Outcome</dt>
+            <dd data-claim-id="exec-outcome">A curated, decision-led Copilot experience.</dd>
+            <dt>Current state</dt>
+            <dd data-claim-id="exec-state">Proposed / discovery; not approved or delivered.</dd>
+            <dt>As of</dt>
+            <dd data-claim-id="exec-asof"><time datetime="2026-09-29">September 29, 2026</time></dd>
+            <dt>Work underway</dt>
+            <dd data-claim-id="exec-work">Sponsor, task, access, and source-boundary validation.</dd>
+            <dt>Next checkpoint</dt>
+            <dd data-claim-id="exec-checkpoint">Select three executive tasks and readiness owners.</dd>
+          </dl>
+          <div class="next-action">
+            <strong>Safe next action</strong>
+            <span data-claim-id="exec-action">Bring three candidate leadership tasks to a joint readiness review; do not begin activation until access and source boundaries are validated.</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-project-card="sales">
+          <div class="card-header">
+            <div>
+              <p class="lane">Sales experience</p>
+              <h2>Sales</h2>
+            </div>
+            <span class="state-chip">Proposed · Discovery</span>
+          </div>
+          <dl class="project-facts">
+            <dt>Lane</dt>
+            <dd data-claim-id="sales-lane">Sales</dd>
+            <dt>Outcome</dt>
+            <dd data-claim-id="sales-outcome">Launch Sales Agent for a bounded cohort and build a persona/process playbook.</dd>
+            <dt>Current state</dt>
+            <dd data-claim-id="sales-state">Proposed / discovery; launch readiness is not yet established.</dd>
+            <dt>As of</dt>
+            <dd data-claim-id="sales-asof"><time datetime="2026-09-29">September 29, 2026</time></dd>
+            <dt>Work underway</dt>
+            <dd data-claim-id="sales-work">Persona/process discovery, launch prerequisites, and one bounded Cowork fit check.</dd>
+            <dt>Next checkpoint</dt>
+            <dd data-claim-id="sales-checkpoint">Select priority personas, two ready-now scenarios, and one bounded proof.</dd>
+          </dl>
+          <div class="next-action">
+            <strong>Safe next action</strong>
+            <span data-claim-id="sales-action">Prepare the persona and scenario choices for joint validation; do not represent a cohort, entitlement, or deployment date as confirmed.</span>
+          </div>
+        </article>
+
+        <article class="project-card supporting" data-project-card="sales-premium">
+          <div class="card-header">
+            <div>
+              <p class="lane">Supporting resource under review</p>
+              <h2>Sales Premium resource center</h2>
+            </div>
+            <span class="state-chip">Access review pending</span>
+          </div>
+          <dl class="project-facts">
+            <dt>Lane</dt>
+            <dd data-claim-id="premium-lane">Sales Premium supporting resource</dd>
+            <dt>Outcome</dt>
+            <dd data-claim-id="premium-outcome">Record the existing Sales Premium resource center without enabling access from this hub.</dd>
+            <dt>Current state</dt>
+            <dd data-claim-id="premium-state">Access-unverified; no link is available from this hub.</dd>
+            <dt>As of</dt>
+            <dd data-claim-id="premium-asof"><time datetime="2026-09-29">Access review pending as of September 29, 2026</time></dd>
+            <dt>Work underway</dt>
+            <dd data-claim-id="premium-work">Owner attestation and bundled-content review are underway.</dd>
+            <dt>Next checkpoint</dt>
+            <dd data-claim-id="premium-checkpoint">Obtain owner attestation and complete content review before enabling a link.</dd>
+          </dl>
+          <div class="next-action">
+            <strong>Safe next action</strong>
+            <span data-claim-id="premium-action">Keep the link withheld until the owner attests to the bundled content and the access review is complete.</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resources" aria-labelledby="resource-heading">
+      <div class="wrap">
+        <p class="eyebrow">Separately authenticated resources</p>
+        <h2 id="resource-heading" data-claim-id="resource-heading-claim">A governed handoff without a discoverable link</h2>
+        <div class="resource-note">
+          <p data-claim-id="resource-model">Recordings and working documents will use a sign-in-required, team-owned SharePoint library only after primary and backup owners, exact recipients, read-only permissions, notification, review or expiry, freshness, replacement, and revocation are resolved.</p>
+          <p data-claim-id="resource-status"><strong>Current state:</strong> the destination, owners, recipients, permissions, expiration, and current access remain unresolved. No resource link is provided, and this page does not imply that the library exists.</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="disclosure" aria-label="Public content disclosure">
+      <div class="wrap">
+        <p data-claim-id="public-disclosure-projects">This public page contains no confidential resources. Proposed work remains subject to joint validation and separate access decisions.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap" data-claim-id="footer-status-projects">Haworth and Microsoft working hub · Project status as of September 29, 2026 · Review candidate only</div>
+  </footer>
+
+  <script>
+    (() => {
+      const button = document.getElementById("theme-toggle");
+      const sync = () => button.setAttribute(
+        "aria-pressed",
+        document.documentElement.getAttribute("data-theme") === "dark" ? "true" : "false"
+      );
+      sync();
+      button.addEventListener("click", () => {
+        const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        sync();
+      });
+    })();
+  </script>
+</body>
+</html>
