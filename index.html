@@ -1,75 +1,72 @@
 <!doctype html>
-<html lang="en" data-visual-style="atomic-orbit" data-style-version="0.3.0">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="A customer-safe front door for Haworth and Microsoft joint projects and governed resource handoffs.">
+  <meta name="description" content="Haworth and Microsoft customer hub for AI, Sales Agent, Copilot, Cowork, resources, and next steps.">
   <link rel="icon" href="data:,">
-  <title>Haworth AI and Premium Forward</title>
+  <title>Haworth AI and Sales Forward</title>
   <script>
     (() => {
-      const requested = new URLSearchParams(window.location.search).get("scoutTheme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme = requested === "light" || requested === "dark"
-        ? requested
-        : (prefersDark ? "dark" : "light");
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.setAttribute("data-theme", theme);
     })();
   </script>
   <style>
     :root {
       color-scheme: light;
-      --cp-bg: #ffffff;
-      --cp-bg-elevated: #eaf3ff;
+      --cp-bg: #f7f4ef;
+      --cp-bg-elevated: #fcfbf8;
       --cp-surface: #ffffff;
-      --cp-surface-soft: #eaf3ff;
-      --cp-border: #a9bdd6;
-      --cp-border-strong: #607d9f;
-      --cp-text: #142d4e;
-      --cp-text-muted: #345377;
-      --cp-text-soft: #425f82;
-      --cp-accent: #0057b8;
-      --cp-accent-hover: #003b7a;
-      --cp-accent-soft: rgba(0, 87, 184, 0.12);
+      --cp-surface-soft: #f5f5f5;
+      --cp-border: #dedede;
+      --cp-border-strong: #919191;
+      --cp-text: #242424;
+      --cp-text-muted: #5c5c5c;
+      --cp-text-soft: #6f6f6f;
+      --cp-accent: #b11f4b;
+      --cp-accent-hover: #9a1a41;
+      --cp-accent-soft: rgba(177, 31, 75, 0.08);
       --cp-accent-fg: #ffffff;
-      --cp-success: #127045;
-      --cp-danger: #9f2a2a;
-      --cp-warning: #7a5200;
-      --cp-link: #003b7a;
-      --cp-shadow: 0 12px 30px rgba(20, 45, 78, 0.12);
-      --cp-overlay: rgba(255, 255, 255, 0.92);
-      --cp-panel: rgba(255, 255, 255, 0.96);
-      --cp-panel-strong: #ffffff;
-      --cp-sheen: rgba(234, 243, 255, 0.8);
-      --cp-highlight: rgba(0, 87, 184, 0.1);
+      --cp-success: #16a34a;
+      --cp-danger: #dc2626;
+      --cp-warning: #f59e0b;
+      --cp-link: #0078d4;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.8);
+      --cp-panel: rgba(255, 255, 255, 0.86);
+      --cp-panel-strong: rgba(255, 255, 255, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.55);
+      --cp-highlight: rgba(177, 31, 75, 0.12);
     }
-
     html[data-theme="dark"] {
       color-scheme: dark;
-      --cp-bg: #0d1e33;
-      --cp-bg-elevated: #102a48;
-      --cp-surface: #173655;
-      --cp-surface-soft: #1d4269;
-      --cp-border: #4f7095;
-      --cp-border-strong: #83a5ca;
-      --cp-text: #ffffff;
-      --cp-text-muted: #cadcf0;
-      --cp-text-soft: #b4cce6;
-      --cp-accent: #78b7ff;
-      --cp-accent-hover: #a7d1ff;
-      --cp-accent-soft: rgba(120, 183, 255, 0.18);
-      --cp-accent-fg: #0d1e33;
-      --cp-success: #75d7a5;
-      --cp-danger: #ffaaaa;
-      --cp-warning: #ffd07a;
-      --cp-link: #9cc7ff;
-      --cp-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
-      --cp-overlay: rgba(13, 30, 51, 0.92);
-      --cp-panel: rgba(23, 54, 85, 0.96);
-      --cp-panel-strong: #173655;
-      --cp-sheen: rgba(255, 255, 255, 0.06);
-      --cp-highlight: rgba(120, 183, 255, 0.16);
+      --cp-bg: #3d3b3a;
+      --cp-bg-elevated: #343231;
+      --cp-surface: #292929;
+      --cp-surface-soft: #2e2e2e;
+      --cp-border: #474747;
+      --cp-border-strong: #5f5f5f;
+      --cp-text: #dedede;
+      --cp-text-muted: #919191;
+      --cp-text-soft: #b0b0b0;
+      --cp-accent: #fd8ea1;
+      --cp-accent-hover: #fb7b91;
+      --cp-accent-soft: rgba(253, 142, 161, 0.14);
+      --cp-accent-fg: #1a1a1a;
+      --cp-success: #4ade80;
+      --cp-danger: #f87171;
+      --cp-warning: #fbbf24;
+      --cp-link: #4da6ff;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+      --cp-overlay: rgba(41, 41, 41, 0.88);
+      --cp-panel: rgba(41, 41, 41, 0.72);
+      --cp-panel-strong: rgba(41, 41, 41, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.04);
+      --cp-highlight: rgba(253, 142, 161, 0.12);
     }
 
     * {
@@ -78,6 +75,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 6rem;
     }
 
     body {
@@ -86,7 +84,7 @@
       overflow-x: hidden;
       background: var(--cp-bg);
       color: var(--cp-text);
-      font: 16px/1.58 "Segoe UI", Aptos, Calibri, sans-serif;
+      font: 16px/1.6 "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     a {
@@ -110,30 +108,38 @@
     h2,
     h3 {
       line-height: 1.08;
-      letter-spacing: -0.025em;
     }
 
     h1 {
-      max-width: 900px;
+      max-width: 850px;
       margin-bottom: 1.25rem;
-      font-size: clamp(2.6rem, 6vw, 5.5rem);
+      font-size: clamp(2.75rem, 7vw, 5.8rem);
+      letter-spacing: -0.055em;
     }
 
     h2 {
-      font-size: clamp(1.75rem, 3vw, 2.45rem);
+      margin-bottom: 1rem;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      letter-spacing: -0.04em;
+    }
+
+    h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
     }
 
     .skip-link {
-      position: absolute;
+      position: fixed;
       top: 0.75rem;
       left: 0.75rem;
       z-index: 100;
       padding: 0.75rem 1rem;
       transform: translateY(-180%);
-      border-radius: 0.25rem;
+      border-radius: 0.625rem;
       background: var(--cp-accent);
       color: var(--cp-accent-fg);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .skip-link:focus {
@@ -141,13 +147,17 @@
     }
 
     .wrap {
-      width: min(1160px, calc(100% - 40px));
+      width: min(1180px, calc(100% - 40px));
       margin-inline: auto;
     }
 
     .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
       border-bottom: 1px solid var(--cp-border);
       background: var(--cp-panel-strong);
+      backdrop-filter: blur(12px);
     }
 
     .header-inner {
@@ -155,7 +165,7 @@
       min-height: 76px;
       align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
     .identity {
@@ -164,7 +174,7 @@
       align-items: center;
       gap: 0.7rem;
       color: var(--cp-text);
-      font-weight: 800;
+      font-weight: 850;
       text-decoration: none;
     }
 
@@ -176,56 +186,56 @@
     .identity small {
       color: var(--cp-text-muted);
       font-size: 0.78rem;
-      font-weight: 650;
+      font-weight: 700;
     }
 
     .site-nav {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 0.45rem;
+      gap: 0.25rem;
       flex-wrap: wrap;
     }
 
     .site-nav a,
     .theme-button {
-      padding: 0.55rem 0.75rem;
+      min-height: 42px;
+      padding: 0.55rem 0.7rem;
       border: 1px solid transparent;
-      border-radius: 0.25rem;
+      border-radius: 0.625rem;
       background: transparent;
       color: var(--cp-text);
       font: inherit;
-      font-weight: 700;
+      font-weight: 750;
       text-decoration: none;
       cursor: pointer;
     }
 
     .site-nav a:hover,
-    .theme-button:hover,
-    .site-nav [aria-current="page"] {
+    .theme-button:hover {
       border-color: var(--cp-border);
       background: var(--cp-surface-soft);
     }
 
     .hero {
-      padding: clamp(4.5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 6.5rem);
+      padding: clamp(4.5rem, 10vw, 8rem) 0 3.25rem;
       background: var(--cp-bg-elevated);
     }
 
     .eyebrow {
       margin-bottom: 1rem;
       color: var(--cp-accent);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 850;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     .hero-summary {
-      max-width: 780px;
+      max-width: 790px;
       margin-bottom: 1.75rem;
       color: var(--cp-text-muted);
-      font-size: clamp(1.12rem, 2.5vw, 1.42rem);
+      font-size: clamp(1.16rem, 2.3vw, 1.48rem);
     }
 
     .actions {
@@ -236,12 +246,13 @@
 
     .button {
       display: inline-flex;
-      min-height: 46px;
+      min-height: 48px;
       align-items: center;
       justify-content: center;
-      padding: 0.7rem 1rem;
+      gap: 0.45rem;
+      padding: 0.75rem 1rem;
       border: 1px solid var(--cp-border-strong);
-      border-radius: 0.25rem;
+      border-radius: 0.625rem;
       background: var(--cp-surface);
       color: var(--cp-text);
       font-weight: 800;
@@ -263,11 +274,29 @@
       background: var(--cp-accent-hover);
     }
 
-    .status-note {
-      max-width: 780px;
-      margin-top: 1.35rem;
-      padding-left: 1rem;
-      border-left: 4px solid var(--cp-accent);
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 3rem;
+      overflow: hidden;
+      border: 1px solid var(--cp-border);
+      border-radius: 16px;
+      background: var(--cp-border);
+      box-shadow: var(--cp-shadow);
+    }
+
+    .hero-fact {
+      padding: 1.25rem;
+      background: var(--cp-surface);
+    }
+
+    .hero-fact strong {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-fact span {
       color: var(--cp-text-muted);
     }
 
@@ -277,68 +306,70 @@
     }
 
     .section {
-      padding: clamp(3.75rem, 8vw, 6rem) 0;
+      padding: clamp(4rem, 8vw, 6.5rem) 0;
       border-bottom: 1px solid var(--cp-border);
     }
 
+    .section.alt {
+      background: var(--cp-bg-elevated);
+    }
+
+    .section-heading {
+      max-width: 820px;
+    }
+
     .section-intro {
-      max-width: 740px;
+      max-width: 760px;
       color: var(--cp-text-muted);
       font-size: 1.08rem;
     }
 
-    .journey-grid {
+    .resource-grid,
+    .outcome-grid,
+    .workstream-grid,
+    .technical-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
       margin-top: 2rem;
-      border: 1px solid var(--cp-border);
-      border-radius: 0.35rem;
-      background: var(--cp-surface);
-      box-shadow: var(--cp-shadow);
     }
 
-    .journey-step {
+    .resource-card,
+    .outcome-card,
+    .workstream-card,
+    .technical-card {
       min-width: 0;
-      padding: 1.5rem;
-    }
-
-    .journey-step + .journey-step {
-      border-left: 1px solid var(--cp-border);
-    }
-
-    .step-number {
-      display: grid;
-      width: 2.2rem;
-      height: 2.2rem;
-      margin-bottom: 1.1rem;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--cp-accent);
-      color: var(--cp-accent-fg);
-      font-weight: 850;
-    }
-
-    .availability {
-      background: var(--cp-bg-elevated);
-    }
-
-    .availability-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(270px, 0.7fr);
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .availability-panel {
-      padding: 1.5rem;
+      padding: 1.45rem;
       border: 1px solid var(--cp-border);
-      border-top: 6px solid var(--cp-accent);
-      border-radius: 0.35rem;
+      border-radius: 16px;
       background: var(--cp-surface);
+      box-shadow: 0 0 2px var(--cp-highlight);
     }
 
-    .label {
-      margin-bottom: 0.45rem;
+    .resource-card {
+      display: flex;
+      min-height: 260px;
+      flex-direction: column;
+    }
+
+    .resource-card.featured {
+      border-top: 7px solid var(--cp-accent);
+    }
+
+    .resource-card p,
+    .outcome-card p,
+    .workstream-card p,
+    .technical-card p {
+      color: var(--cp-text-muted);
+    }
+
+    .resource-card .button {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .resource-meta {
+      margin-bottom: 0.65rem;
       color: var(--cp-accent);
       font-size: 0.78rem;
       font-weight: 850;
@@ -346,8 +377,215 @@
       text-transform: uppercase;
     }
 
+    .access-note {
+      margin-top: 1.25rem;
+      padding: 1rem 1.1rem;
+      border-left: 5px solid var(--cp-accent);
+      border-radius: 0.625rem;
+      background: var(--cp-accent-soft);
+      color: var(--cp-text-muted);
+    }
+
+    .outcome-card strong {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-size: 1.08rem;
+    }
+
+    .guide-shell {
+      margin-top: 2rem;
+      overflow: hidden;
+      border: 1px solid var(--cp-border);
+      border-radius: 16px;
+      background: var(--cp-surface);
+      box-shadow: var(--cp-shadow);
+    }
+
+    .role-tabs {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--cp-border);
+      background: var(--cp-surface-soft);
+      flex-wrap: wrap;
+    }
+
+    .role-tab {
+      min-height: 44px;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--cp-border-strong);
+      border-radius: 0.625rem;
+      background: var(--cp-surface);
+      color: var(--cp-text);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .role-tab:hover,
+    .role-tab[aria-selected="true"] {
+      border-color: var(--cp-accent);
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+    }
+
+    .guide-content {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 2rem;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .role-summary {
+      padding-right: 1rem;
+    }
+
+    .role-summary .role-name {
+      margin-bottom: 0.5rem;
+      color: var(--cp-accent);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .role-summary p {
+      color: var(--cp-text-muted);
+      font-size: 1.08rem;
+    }
+
+    .role-list {
+      margin: 1.25rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    .role-list li + li {
+      margin-top: 0.55rem;
+    }
+
+    .journey {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .journey-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.9rem;
+      padding: 1rem;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.625rem;
+      background: var(--cp-bg-elevated);
+    }
+
+    .journey-number {
+      display: grid;
+      width: 2.25rem;
+      height: 2.25rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      font-weight: 850;
+    }
+
+    .journey-step strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .journey-step span {
+      color: var(--cp-text-muted);
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .path-step {
+      position: relative;
+      min-width: 0;
+      padding: 1.25rem;
+      border: 1px solid var(--cp-border);
+      border-radius: 16px;
+      background: var(--cp-surface);
+    }
+
+    .path-step::after {
+      position: absolute;
+      top: 1.45rem;
+      right: -0.72rem;
+      z-index: 2;
+      padding: 0.1rem 0.35rem;
+      border-radius: 50%;
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      content: "→";
+      font-weight: 900;
+    }
+
+    .path-step:last-child::after {
+      display: none;
+    }
+
+    .path-step p {
+      margin-bottom: 0;
+      color: var(--cp-text-muted);
+    }
+
+    .state {
+      display: inline-flex;
+      margin-bottom: 0.8rem;
+      padding: 0.3rem 0.55rem;
+      border: 1px solid var(--cp-border-strong);
+      border-radius: 999px;
+      color: var(--cp-text);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .workstream-card {
+      border-top: 6px solid var(--cp-accent);
+    }
+
+    .workstream-card .state,
+    .technical-card .state {
+      margin-bottom: 0.65rem;
+    }
+
+    .technical-card ul {
+      margin-bottom: 0;
+      padding-left: 1.15rem;
+      color: var(--cp-text-muted);
+    }
+
+    .technical-card li + li {
+      margin-top: 0.4rem;
+    }
+
+    .next-step {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 2rem;
+      padding: clamp(1.75rem, 4vw, 3rem);
+      border: 1px solid var(--cp-border);
+      border-radius: 16px;
+      background: var(--cp-surface);
+      box-shadow: var(--cp-shadow);
+    }
+
+    .next-step p {
+      max-width: 720px;
+      margin-bottom: 0;
+      color: var(--cp-text-muted);
+    }
+
     .disclosure {
-      padding: 1.15rem 0;
+      padding: 1.2rem 0;
       background: var(--cp-text);
       color: var(--cp-bg);
     }
@@ -363,7 +601,7 @@
       font-size: 0.88rem;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       .header-inner {
         align-items: flex-start;
         flex-direction: column;
@@ -374,14 +612,33 @@
         justify-content: flex-start;
       }
 
-      .availability-inner {
+      .resource-grid,
+      .outcome-grid,
+      .workstream-grid,
+      .technical-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .guide-content {
         grid-template-columns: 1fr;
+      }
+
+      .role-summary {
+        padding-right: 0;
+      }
+
+      .path-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .path-step:nth-child(2)::after {
+        display: none;
       }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 640px) {
       .wrap {
-        width: min(100% - 28px, 1160px);
+        width: min(100% - 28px, 1180px);
       }
 
       .identity {
@@ -404,20 +661,31 @@
       }
 
       .hero {
-        padding-top: 3.75rem;
+        padding-top: 3.5rem;
       }
 
-      .journey-grid {
+      .hero-strip,
+      .resource-grid,
+      .outcome-grid,
+      .workstream-grid,
+      .technical-grid,
+      .path-grid,
+      .next-step {
         grid-template-columns: 1fr;
       }
 
-      .journey-step + .journey-step {
-        border-top: 1px solid var(--cp-border);
-        border-left: 0;
+      .path-step::after {
+        display: none;
       }
 
-      .actions .button {
+      .actions .button,
+      .next-step .button {
         width: 100%;
+      }
+
+      .role-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -436,17 +704,11 @@
     }
 
     @media print {
-      :root {
-        --cp-bg: #ffffff;
-        --cp-bg-elevated: #ffffff;
-        --cp-surface: #ffffff;
-        --cp-text: #142d4e;
-        --cp-text-muted: #345377;
-      }
-
-      .site-nav,
+      .site-header,
+      .skip-link,
       .theme-button,
-      .skip-link {
+      .role-tabs,
+      .actions {
         display: none;
       }
 
@@ -455,14 +717,14 @@
         padding: 2rem 0;
       }
 
-      .journey-grid,
-      .availability-panel {
+      .guide-shell,
+      .next-step,
+      .resource-card,
+      .outcome-card,
+      .workstream-card,
+      .technical-card {
         box-shadow: none;
         break-inside: avoid;
-      }
-
-      a {
-        color: #003b7a;
       }
     }
   </style>
@@ -471,98 +733,416 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="identity" href="index.html" aria-label="Haworth and Microsoft: AI and Premium Forward home">
+      <a class="identity" href="#top" aria-label="Haworth and Microsoft AI and Sales Forward home">
         <span>Haworth</span>
         <span>Microsoft</span>
-        <small>AI and Premium Forward</small>
+        <small>AI and Sales Forward</small>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="projects.html">Projects</a>
+        <a href="#resources">Resources</a>
+        <a href="#vision">Vision guide</a>
+        <a href="#workstreams">Workstreams</a>
+        <a href="#delivery">Delivery path</a>
         <button class="theme-button" id="theme-toggle" type="button" aria-pressed="false">Switch theme</button>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero" aria-labelledby="page-title">
+    <section class="hero" id="top" aria-labelledby="page-title">
       <div class="wrap">
-        <p class="eyebrow">Joint engagement front door</p>
-        <h1 id="page-title">Haworth AI and Premium Forward</h1>
-        <p class="hero-summary" data-claim-id="frontdoor-purpose">One customer-safe entry point for current Haworth and Microsoft joint projects and governed resource handoffs.</p>
+        <p class="eyebrow">One connected customer hub</p>
+        <h1 id="page-title">Haworth AI and Sales Forward</h1>
+        <p class="hero-summary">Revisit what we have explored, use the shared collaboration space, and shape the next seller, leader, and executive experiences together.</p>
         <div class="actions">
-          <a class="button primary" href="projects.html">Explore current projects</a>
-          <a class="button" href="#resources">How resources are shared</a>
+          <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Open Haworth ABS Customer Hub</a>
+          <a class="button" href="#vision">Explore the experience vision</a>
         </div>
-        <p class="status-note" data-claim-id="plan-status">Project details are working plans subject to joint validation. Proposed work is not represented as approved, delivered, or ready to scale.</p>
+        <div class="hero-strip" aria-label="Engagement at a glance">
+          <div class="hero-fact">
+            <strong>Now</strong>
+            <span>Seller-role and sales-process discovery</span>
+          </div>
+          <div class="hero-fact">
+            <strong>Next</strong>
+            <span>Two ready-now scenarios and one bounded proof</span>
+          </div>
+          <div class="hero-fact">
+            <strong>Measure</strong>
+            <span>Adoption, time value, data quality, and safe follow-through</span>
+          </div>
+        </div>
       </div>
     </section>
     <div class="accent-divider" aria-hidden="true"></div>
 
-    <section class="section" aria-labelledby="journey-heading">
+    <section class="section" id="resources" aria-labelledby="resources-heading">
       <div class="wrap">
-        <p class="eyebrow">How to use this hub</p>
-        <h2 id="journey-heading">Find the right lane with fewer assumptions</h2>
-        <p class="section-intro" data-claim-id="journey-instruction">Start with the portfolio, match the outcome to the work at hand, then use only the next action shown for that lane.</p>
-        <div class="journey-grid">
-          <section class="journey-step" aria-labelledby="orient-title">
-            <div class="step-number" aria-hidden="true">1</div>
-            <h3 id="orient-title">Orient</h3>
-            <p data-claim-id="journey-orient">See each project outcome, its proposed state, the work underway, and the next checkpoint.</p>
-          </section>
-          <section class="journey-step" aria-labelledby="choose-title">
-            <div class="step-number" aria-hidden="true">2</div>
-            <h3 id="choose-title">Choose</h3>
-            <p data-claim-id="journey-choose">Select Executive Activation, Sales, or review the access status of the existing Sales Premium resource center.</p>
-          </section>
-          <section class="journey-step" aria-labelledby="access-title">
-            <div class="step-number" aria-hidden="true">3</div>
-            <h3 id="access-title">Continue safely</h3>
-            <p data-claim-id="journey-access">Follow the stated checkpoint. Working documents and recordings are not exposed through this route.</p>
-          </section>
+        <div class="section-heading">
+          <p class="eyebrow">Start here</p>
+          <h2 id="resources-heading">Everything needed to continue the work</h2>
+          <p class="section-intro">The current workspace, the latest meeting artifact, and the original Sales Premium experience are connected here so the engagement can move forward without losing prior work.</p>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card featured">
+            <p class="resource-meta">Current collaboration</p>
+            <h3>Haworth ABS Customer Hub</h3>
+            <p>Use the Haworth SharePoint site for customer-accessible meeting artifacts and ongoing collaboration.</p>
+            <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Open customer hub</a>
+          </article>
+          <article class="resource-card">
+            <p class="resource-meta">September 25 meeting</p>
+            <h3>AI Business Process Connect transcript</h3>
+            <p>This meeting was transcribed but not video-recorded. The transcript is available to the approved audience in SharePoint.</p>
+            <a class="button" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward/Shared%20Documents/Meeting%20Recordings/2026-09-25%20Haworth%20AI%20Business%20Process%20Connect%20-%20Meeting%20Transcript.mp4">Open the transcript</a>
+          </article>
+          <article class="resource-card">
+            <p class="resource-meta">Preserved prior work</p>
+            <h3>Sales Premium customer hub</h3>
+            <p>Return to the original seller-intelligence experience, demo recap, and supporting resources. Use the passphrase previously shared with the Haworth team.</p>
+            <a class="button" href="https://billwhalenmsft.github.io/haworth-premium-sales-2027/">Open the prior hub</a>
+          </article>
+        </div>
+        <p class="access-note"><strong>Access:</strong> SharePoint resources require sign-in and are limited to the approved Haworth and Microsoft audience. The prior Sales Premium hub remains preserved at its original address.</p>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="heard-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">What we heard</p>
+          <h2 id="heard-heading">Start with the work, then choose the technology</h2>
+          <p class="section-intro">The joint direction is to make the seller experience simpler, protect Dynamics 365 as the system of record, and prove value before expanding the solution.</p>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome-card">
+            <strong>Reduce seller administration</strong>
+            <p>Capture signals once, remove unnecessary steps, and make safe follow-through easier from Outlook, Teams, mobile, and the flow of work.</p>
+          </article>
+          <article class="outcome-card">
+            <strong>Use the right layer</strong>
+            <p>Begin with ready-now Copilot and Sales Agent value, use Cowork for justified cross-app orchestration, and extend only when a real gap remains.</p>
+          </article>
+          <article class="outcome-card">
+            <strong>Keep people in control</strong>
+            <p>Ground experiences in approved data, keep proposed actions reviewable, and require confirmation for consequential updates.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section availability" id="resources" aria-labelledby="available-heading">
-      <div class="wrap availability-inner">
-        <div>
-          <p class="eyebrow">Access review pending</p>
-          <h2 id="available-heading" data-claim-id="availability-heading">Existing Sales Premium resource center — access review pending</h2>
-          <p class="section-intro" data-claim-id="availability-resource">The existing customer resource center is being reviewed before it is linked from this hub.</p>
+    <section class="section" id="vision" aria-labelledby="vision-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive vision guide</p>
+          <h2 id="vision-heading">See the experience through each role</h2>
+          <p class="section-intro">Choose a role to explore an illustrative end-to-end journey. These scenarios guide discovery; Haworth will validate the priorities, data, actions, and success measures before any pilot.</p>
         </div>
-        <div class="availability-panel">
-          <p class="label">Access-unverified reference</p>
-          <h3>Haworth Sales Premium</h3>
-          <p data-claim-id="availability-use">Owner attestation and content review are required before any link is enabled.</p>
-          <p class="label">Link withheld</p>
+        <div class="guide-shell">
+          <div class="role-tabs" role="tablist" aria-label="Experience roles">
+            <button class="role-tab" id="tab-seller" type="button" role="tab" aria-selected="true" aria-controls="role-panel" data-role="seller">Seller</button>
+            <button class="role-tab" id="tab-leader" type="button" role="tab" aria-selected="false" aria-controls="role-panel" data-role="leader" tabindex="-1">Sales leader</button>
+            <button class="role-tab" id="tab-executive" type="button" role="tab" aria-selected="false" aria-controls="role-panel" data-role="executive" tabindex="-1">Executive</button>
+            <button class="role-tab" id="tab-admin" type="button" role="tab" aria-selected="false" aria-controls="role-panel" data-role="admin" tabindex="-1">Technology and admin</button>
+          </div>
+          <div class="guide-content" id="role-panel" role="tabpanel" aria-live="polite" aria-labelledby="tab-seller">
+            <div class="role-summary">
+              <p class="role-name" id="role-name">Seller experience</p>
+              <h3 id="role-title">Spend more time with customers and less time reconstructing the deal.</h3>
+              <p id="role-description">Bring trusted account context, meeting preparation, capture, and reviewable follow-through into the seller's flow of work.</p>
+              <ul class="role-list" id="role-outcomes">
+                <li>Prioritize the right customer and next action.</li>
+                <li>Prepare with approved CRM and Microsoft 365 context.</li>
+                <li>Review proposed follow-through before Dynamics 365 updates.</li>
+              </ul>
+            </div>
+            <div class="journey" id="role-journey" aria-label="Illustrative seller journey"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <aside class="disclosure" aria-label="Public content disclosure">
+    <section class="section alt" id="delivery" aria-labelledby="path-heading">
       <div class="wrap">
-        <p data-claim-id="public-disclosure">This public page contains no confidential resources. Restricted working materials remain outside this route and require separately reviewed access.</p>
+        <div class="section-heading">
+          <p class="eyebrow">From vision to working proof</p>
+          <h2 id="path-heading">Move forward in bounded, measurable steps</h2>
+          <p class="section-intro">The path separates what can be enabled now from what must be discovered, proven, and governed before scale.</p>
+        </div>
+        <div class="path-grid">
+          <article class="path-step">
+            <span class="state">1 · Align</span>
+            <h3>Map roles and work</h3>
+            <p>Choose priority seller personas, recurring tasks, friction, approved context, and outcome measures.</p>
+          </article>
+          <article class="path-step">
+            <span class="state">2 · Activate</span>
+            <h3>Use ready-now value</h3>
+            <p>Validate the Sales Agent, Copilot, environment, access, and support path for a bounded cohort.</p>
+          </article>
+          <article class="path-step">
+            <span class="state">3 · Prove</span>
+            <h3>Test one orchestration</h3>
+            <p>Run one cross-app scenario with explicit data, actions, human approvals, cost routing, and stop measures.</p>
+          </article>
+          <article class="path-step">
+            <span class="state">4 · Decide</span>
+            <h3>Scale, adjust, or stop</h3>
+            <p>Expand only when repeat use, usefulness, data quality, supportability, and cost evidence justify it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workstreams" aria-labelledby="workstreams-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Joint workstreams</p>
+          <h2 id="workstreams-heading">One engagement, connected work</h2>
+          <p class="section-intro">Each lane contributes to the same outcome: a practical, governed AI operating model that meets Haworth users where they work.</p>
+        </div>
+        <div class="workstream-grid">
+          <article class="workstream-card">
+            <span class="state">Discovery</span>
+            <h3>Seller personas and processes</h3>
+            <p>Document the priority roles, current work, D365 touchpoints, friction, approved actions, and success measures.</p>
+          </article>
+          <article class="workstream-card">
+            <span class="state">Launch planning</span>
+            <h3>Sales Agent activation</h3>
+            <p>Confirm the environment, cohort, access, scenarios, support, rollback, and baseline adoption measures.</p>
+          </article>
+          <article class="workstream-card">
+            <span class="state">Bounded proof</span>
+            <h3>Cowork fit</h3>
+            <p>Test one cross-app seller task and compare value, maintenance, governance, and cost with extension or custom paths.</p>
+          </article>
+          <article class="workstream-card">
+            <span class="state">Separate path</span>
+            <h3>Executive activation</h3>
+            <p>Choose leadership decisions and recurring tasks, then design a concise experience with trusted sources and a named sponsor.</p>
+          </article>
+          <article class="workstream-card">
+            <span class="state">Required foundation</span>
+            <h3>Governance and operations</h3>
+            <p>Resolve identity, data boundaries, monitoring, human approval, cost routing, support, and accountable ownership.</p>
+          </article>
+          <article class="workstream-card">
+            <span class="state">Evidence</span>
+            <h3>Adoption and outcomes</h3>
+            <p>Measure repeat use, time value, scenario completion, correction rate, data quality, and support burden.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="technical-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Technical delivery set</p>
+          <h2 id="technical-heading">Discovery-first technical direction</h2>
+          <p class="section-intro">The current state is a customer journey and discovery guide, not a final production design. Haworth and Microsoft technical owners will close the decisions below before implementation.</p>
+        </div>
+        <div class="technical-grid">
+          <article class="technical-card">
+            <span class="state">Technical details</span>
+            <h3>Readiness to confirm</h3>
+            <ul>
+              <li>Target environment and eligible users</li>
+              <li>Identity, roles, data, and licensing path</li>
+              <li>Support, monitoring, and rollback ownership</li>
+            </ul>
+          </article>
+          <article class="technical-card">
+            <span class="state">Architecture</span>
+            <h3>Boundary to validate</h3>
+            <ul>
+              <li>Dynamics 365 remains the system of record</li>
+              <li>Copilot, Sales Agent, and Cowork use approved context</li>
+              <li>Connectors and actions are explicitly bounded</li>
+            </ul>
+          </article>
+          <article class="technical-card">
+            <span class="state">Solution design</span>
+            <h3>Proof to define</h3>
+            <ul>
+              <li>One persona, task, trigger, and desired outcome</li>
+              <li>Human review for consequential actions</li>
+              <li>Acceptance, cost, stop, and scale measures</li>
+            </ul>
+          </article>
+        </div>
+        <p class="access-note"><strong>Decision owner:</strong> joint Haworth and Microsoft technical leads, informed by the seller-process discovery and the selected proof scenario.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="next-heading">
+      <div class="wrap">
+        <div class="next-step">
+          <div>
+            <p class="eyebrow">Next checkpoint</p>
+            <h2 id="next-heading">Turn the sales process into two ready-now plays and one proof.</h2>
+            <p>Use the focused seller-role and process session to choose the users, task, approved context, guardrails, outcome measures, and technical owners that will define the first working experience.</p>
+          </div>
+          <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Continue in the customer hub</a>
+        </div>
+      </div>
+    </section>
+
+    <aside class="disclosure" aria-label="Customer resource disclosure">
+      <div class="wrap">
+        <p>This orientation page contains customer-approved engagement guidance. Protected working materials remain in the sign-in-required Haworth ABS Customer Hub on SharePoint.</p>
       </div>
     </aside>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap" data-claim-id="footer-status">Haworth and Microsoft working hub · Project status as of September 29, 2026 · Review candidate only</div>
+    <div class="wrap">Haworth and Microsoft customer hub · Updated September 30, 2026 · Product availability, licensing, data, and deployment decisions remain subject to joint validation.</div>
   </footer>
 
   <script>
     (() => {
-      const button = document.getElementById("theme-toggle");
-      const sync = () => button.setAttribute(
-        "aria-pressed",
-        document.documentElement.getAttribute("data-theme") === "dark" ? "true" : "false"
-      );
-      sync();
-      button.addEventListener("click", () => {
-        const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", next);
-        sync();
+      const roleData = {
+        seller: {
+          name: "Seller experience",
+          title: "Spend more time with customers and less time reconstructing the deal.",
+          description: "Bring trusted account context, meeting preparation, capture, and reviewable follow-through into the seller's flow of work.",
+          outcomes: [
+            "Prioritize the right customer and next action.",
+            "Prepare with approved CRM and Microsoft 365 context.",
+            "Review proposed follow-through before Dynamics 365 updates."
+          ],
+          journey: [
+            ["Prioritize", "Surface the accounts, opportunities, and actions that need attention."],
+            ["Prepare", "Build a concise brief from approved customer, relationship, and meeting context."],
+            ["Engage", "Keep the conversation human while capturing the right signals."],
+            ["Follow through", "Draft recap, tasks, and CRM changes for seller review and approval."]
+          ]
+        },
+        leader: {
+          name: "Sales leader experience",
+          title: "Coach the team with clearer evidence and fewer reporting gaps.",
+          description: "Move from static status collection to decision-oriented views of pipeline, relationships, risk, and owner actions.",
+          outcomes: [
+            "See where seller attention can change the outcome.",
+            "Use consistent evidence for coaching and inspection.",
+            "Keep definitions, freshness, and limitations visible."
+          ],
+          journey: [
+            ["Sense", "Bring together approved pipeline, activity, relationship, and adoption signals."],
+            ["Focus", "Highlight the deals, customers, and decisions that need leadership attention."],
+            ["Coach", "Prepare evidence-backed questions and next-action options for the seller."],
+            ["Review", "Track whether agreed follow-through happened and improved the outcome."]
+          ]
+        },
+        executive: {
+          name: "Executive experience",
+          title: "Start with the decisions that matter, not a catalog of AI features.",
+          description: "Create a concise leadership front door for priorities, preparation, synthesis, decisions, and accountable follow-through.",
+          outcomes: [
+            "Prepare for recurring leadership moments faster.",
+            "Trace important insight to approved source context.",
+            "Separate recommendations from consequential actions."
+          ],
+          journey: [
+            ["Orient", "Summarize the approved priorities, meetings, decisions, and open actions."],
+            ["Explore", "Deepen one bounded question across trusted business context."],
+            ["Decide", "Compare options, evidence, risks, and tradeoffs in a reviewable brief."],
+            ["Follow through", "Confirm owners and checkpoints before any message or system update."]
+          ]
+        },
+        admin: {
+          name: "Technology and admin experience",
+          title: "Make the experience useful without losing control of identity, data, action, or cost.",
+          description: "Give technical owners a clear path to validate access, sources, connectors, monitoring, support, and cost routing.",
+          outcomes: [
+            "Know which experience owns each task and action.",
+            "Bound data and write-back with explicit permissions.",
+            "Measure operations, support, and consumption before scale."
+          ],
+          journey: [
+            ["Approve", "Confirm users, environments, data sources, actions, and retention boundaries."],
+            ["Configure", "Enable the smallest useful scenario with support and rollback defined."],
+            ["Observe", "Monitor access, action history, quality, incidents, and cost routing."],
+            ["Govern", "Use evidence to scale, adjust, pause, or retire the experience."]
+          ]
+        }
+      };
+
+      const tabs = Array.from(document.querySelectorAll(".role-tab"));
+      const panel = document.getElementById("role-panel");
+      const name = document.getElementById("role-name");
+      const title = document.getElementById("role-title");
+      const description = document.getElementById("role-description");
+      const outcomes = document.getElementById("role-outcomes");
+      const journey = document.getElementById("role-journey");
+
+      const renderRole = (role) => {
+        const data = roleData[role];
+        const activeTab = tabs.find((tab) => tab.dataset.role === role);
+        tabs.forEach((tab) => {
+          const selected = tab === activeTab;
+          tab.setAttribute("aria-selected", selected ? "true" : "false");
+          tab.tabIndex = selected ? 0 : -1;
+        });
+        panel.setAttribute("aria-labelledby", activeTab.id);
+        name.textContent = data.name;
+        title.textContent = data.title;
+        description.textContent = data.description;
+        outcomes.replaceChildren(...data.outcomes.map((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          return li;
+        }));
+        journey.setAttribute("aria-label", `Illustrative ${data.name.toLowerCase()} journey`);
+        journey.replaceChildren(...data.journey.map((step, index) => {
+          const article = document.createElement("article");
+          article.className = "journey-step";
+          const number = document.createElement("div");
+          number.className = "journey-number";
+          number.setAttribute("aria-hidden", "true");
+          number.textContent = String(index + 1);
+          const body = document.createElement("div");
+          const strong = document.createElement("strong");
+          const detail = document.createElement("span");
+          strong.textContent = step[0];
+          detail.textContent = step[1];
+          body.append(strong, detail);
+          article.append(number, body);
+          return article;
+        }));
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => renderRole(tab.dataset.role));
+        tab.addEventListener("keydown", (event) => {
+          if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
+            return;
+          }
+          event.preventDefault();
+          let nextIndex = index;
+          if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+          if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+          if (event.key === "Home") nextIndex = 0;
+          if (event.key === "End") nextIndex = tabs.length - 1;
+          tabs[nextIndex].focus();
+          renderRole(tabs[nextIndex].dataset.role);
+        });
+      });
+
+      renderRole("seller");
+
+      const themeButton = document.getElementById("theme-toggle");
+      const syncTheme = () => {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        themeButton.setAttribute("aria-pressed", isDark ? "true" : "false");
+        themeButton.textContent = isDark ? "Use light theme" : "Use dark theme";
+      };
+      syncTheme();
+      themeButton.addEventListener("click", () => {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+        syncTheme();
       });
     })();
   </script>
