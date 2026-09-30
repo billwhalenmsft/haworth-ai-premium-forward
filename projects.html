@@ -12,60 +12,61 @@
       const theme =
         param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.setAttribute("data-brand", "haworth");
     })();
   </script>
   <style>
     :root {
       color-scheme: light;
-      --cp-bg: #f7f4ef;
-      --cp-bg-elevated: #fcfbf8;
-      --cp-surface: #ffffff;
-      --cp-surface-soft: #f5f5f5;
-      --cp-border: #dedede;
-      --cp-border-strong: #919191;
-      --cp-text: #242424;
-      --cp-text-muted: #5c5c5c;
-      --cp-text-soft: #6f6f6f;
-      --cp-accent: #b11f4b;
-      --cp-accent-hover: #9a1a41;
-      --cp-accent-soft: rgba(177, 31, 75, 0.08);
-      --cp-accent-fg: #ffffff;
-      --cp-success: #16a34a;
-      --cp-danger: #dc2626;
-      --cp-warning: #f59e0b;
-      --cp-link: #0078d4;
-      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
-      --cp-overlay: rgba(255, 255, 255, 0.8);
-      --cp-panel: rgba(255, 255, 255, 0.86);
-      --cp-panel-strong: rgba(255, 255, 255, 0.96);
-      --cp-sheen: rgba(255, 255, 255, 0.55);
-      --cp-highlight: rgba(177, 31, 75, 0.12);
+      --cp-bg: #FFFFFF;
+      --cp-bg-elevated: #EAF3FF;
+      --cp-surface: #FFFFFF;
+      --cp-surface-soft: #EAF3FF;
+      --cp-border: #A9BDD6;
+      --cp-border-strong: #607D9F;
+      --cp-text: #142D4E;
+      --cp-text-muted: #345377;
+      --cp-text-soft: #425F82;
+      --cp-accent: #0057B8;
+      --cp-accent-hover: #003B7A;
+      --cp-accent-soft: rgba(0, 87, 184, 0.12);
+      --cp-accent-fg: #FFFFFF;
+      --cp-success: #127045;
+      --cp-danger: #9F2A2A;
+      --cp-warning: #7A5200;
+      --cp-link: #003B7A;
+      --cp-shadow: 0 12px 30px rgba(20, 45, 78, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.92);
+      --cp-panel: rgba(255, 255, 255, 0.96);
+      --cp-panel-strong: #FFFFFF;
+      --cp-sheen: rgba(234, 243, 255, 0.80);
+      --cp-highlight: rgba(0, 87, 184, 0.10);
     }
     html[data-theme="dark"] {
       color-scheme: dark;
-      --cp-bg: #3d3b3a;
-      --cp-bg-elevated: #343231;
-      --cp-surface: #292929;
-      --cp-surface-soft: #2e2e2e;
-      --cp-border: #474747;
-      --cp-border-strong: #5f5f5f;
-      --cp-text: #dedede;
-      --cp-text-muted: #919191;
-      --cp-text-soft: #b0b0b0;
-      --cp-accent: #fd8ea1;
-      --cp-accent-hover: #fb7b91;
-      --cp-accent-soft: rgba(253, 142, 161, 0.14);
-      --cp-accent-fg: #1a1a1a;
-      --cp-success: #4ade80;
-      --cp-danger: #f87171;
-      --cp-warning: #fbbf24;
-      --cp-link: #4da6ff;
-      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
-      --cp-overlay: rgba(41, 41, 41, 0.88);
-      --cp-panel: rgba(41, 41, 41, 0.72);
-      --cp-panel-strong: rgba(41, 41, 41, 0.96);
-      --cp-sheen: rgba(255, 255, 255, 0.04);
-      --cp-highlight: rgba(253, 142, 161, 0.12);
+      --cp-bg: #0D1E33;
+      --cp-bg-elevated: #102A48;
+      --cp-surface: #173655;
+      --cp-surface-soft: #1D4269;
+      --cp-border: #4F7095;
+      --cp-border-strong: #83A5CA;
+      --cp-text: #FFFFFF;
+      --cp-text-muted: #CADCF0;
+      --cp-text-soft: #B4CCE6;
+      --cp-accent: #78B7FF;
+      --cp-accent-hover: #A7D1FF;
+      --cp-accent-soft: rgba(120, 183, 255, 0.18);
+      --cp-accent-fg: #0D1E33;
+      --cp-success: #75D7A5;
+      --cp-danger: #FFAAAA;
+      --cp-warning: #FFD07A;
+      --cp-link: #9CC7FF;
+      --cp-shadow: 0 16px 36px rgba(0, 0, 0, 0.30);
+      --cp-overlay: rgba(13, 30, 51, 0.92);
+      --cp-panel: rgba(23, 54, 85, 0.96);
+      --cp-panel-strong: #173655;
+      --cp-sheen: rgba(255, 255, 255, 0.06);
+      --cp-highlight: rgba(120, 183, 255, 0.16);
     }
     * { box-sizing: border-box; }
     body {
@@ -117,10 +118,58 @@
       outline-offset: 3px;
     }
   </style>
+  <style>
+    :root {
+      --cp-bg: #f7f4ef;
+      --cp-bg-elevated: #fcfbf8;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #f5f5f5;
+      --cp-border: #dedede;
+      --cp-border-strong: #001d34;
+      --cp-text: #242424;
+      --cp-text-muted: #5c5c5c;
+      --cp-text-soft: #6f6f6f;
+      --cp-accent: #e51938;
+      --cp-accent-hover: #c81430;
+      --cp-accent-soft: rgba(229, 25, 56, 0.09);
+      --cp-accent-fg: #ffffff;
+      --cp-link: #001d34;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+      --cp-highlight: rgba(229, 25, 56, 0.13);
+    }
+
+    html[data-theme="dark"] {
+      --cp-bg: #001d34;
+      --cp-bg-elevated: #06283e;
+      --cp-surface: #0b3047;
+      --cp-surface-soft: #123950;
+      --cp-border: #33566a;
+      --cp-border-strong: #e6e7e8;
+      --cp-text: #ffffff;
+      --cp-text-muted: #d2dce2;
+      --cp-text-soft: #e6e7e8;
+      --cp-accent: #e51938;
+      --cp-accent-hover: #ff405b;
+      --cp-accent-soft: rgba(229, 25, 56, 0.18);
+      --cp-accent-fg: #ffffff;
+      --cp-link: #ffffff;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+      --cp-highlight: rgba(229, 25, 56, 0.2);
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background: repeating-linear-gradient(90deg, transparent 0, transparent 63px, var(--cp-accent-soft) 64px);
+      opacity: 0.38;
+    }
+  </style>
 </head>
 <body>
   <main>
-    <p>Haworth + Microsoft</p>
+    <p>Haworth + Microsoft · SE OS engagement</p>
     <h1>The projects are now part of one connected customer hub.</h1>
     <p>The refreshed hub brings the workstreams, collaboration space, meeting transcript, preserved Sales Premium experience, interactive role journey, and delivery path together.</p>
     <a href="index.html#workstreams">Open the connected project view</a>

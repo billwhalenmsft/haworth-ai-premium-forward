@@ -13,60 +13,61 @@
       const theme =
         param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.setAttribute("data-brand", "haworth");
     })();
   </script>
   <style>
     :root {
       color-scheme: light;
-      --cp-bg: #f7f4ef;
-      --cp-bg-elevated: #fcfbf8;
-      --cp-surface: #ffffff;
-      --cp-surface-soft: #f5f5f5;
-      --cp-border: #dedede;
-      --cp-border-strong: #919191;
-      --cp-text: #242424;
-      --cp-text-muted: #5c5c5c;
-      --cp-text-soft: #6f6f6f;
-      --cp-accent: #b11f4b;
-      --cp-accent-hover: #9a1a41;
-      --cp-accent-soft: rgba(177, 31, 75, 0.08);
-      --cp-accent-fg: #ffffff;
-      --cp-success: #16a34a;
-      --cp-danger: #dc2626;
-      --cp-warning: #f59e0b;
-      --cp-link: #0078d4;
-      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
-      --cp-overlay: rgba(255, 255, 255, 0.8);
-      --cp-panel: rgba(255, 255, 255, 0.86);
-      --cp-panel-strong: rgba(255, 255, 255, 0.96);
-      --cp-sheen: rgba(255, 255, 255, 0.55);
-      --cp-highlight: rgba(177, 31, 75, 0.12);
+      --cp-bg: #FFFFFF;
+      --cp-bg-elevated: #EAF3FF;
+      --cp-surface: #FFFFFF;
+      --cp-surface-soft: #EAF3FF;
+      --cp-border: #A9BDD6;
+      --cp-border-strong: #607D9F;
+      --cp-text: #142D4E;
+      --cp-text-muted: #345377;
+      --cp-text-soft: #425F82;
+      --cp-accent: #0057B8;
+      --cp-accent-hover: #003B7A;
+      --cp-accent-soft: rgba(0, 87, 184, 0.12);
+      --cp-accent-fg: #FFFFFF;
+      --cp-success: #127045;
+      --cp-danger: #9F2A2A;
+      --cp-warning: #7A5200;
+      --cp-link: #003B7A;
+      --cp-shadow: 0 12px 30px rgba(20, 45, 78, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.92);
+      --cp-panel: rgba(255, 255, 255, 0.96);
+      --cp-panel-strong: #FFFFFF;
+      --cp-sheen: rgba(234, 243, 255, 0.80);
+      --cp-highlight: rgba(0, 87, 184, 0.10);
     }
     html[data-theme="dark"] {
       color-scheme: dark;
-      --cp-bg: #3d3b3a;
-      --cp-bg-elevated: #343231;
-      --cp-surface: #292929;
-      --cp-surface-soft: #2e2e2e;
-      --cp-border: #474747;
-      --cp-border-strong: #5f5f5f;
-      --cp-text: #dedede;
-      --cp-text-muted: #919191;
-      --cp-text-soft: #b0b0b0;
-      --cp-accent: #fd8ea1;
-      --cp-accent-hover: #fb7b91;
-      --cp-accent-soft: rgba(253, 142, 161, 0.14);
-      --cp-accent-fg: #1a1a1a;
-      --cp-success: #4ade80;
-      --cp-danger: #f87171;
-      --cp-warning: #fbbf24;
-      --cp-link: #4da6ff;
-      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
-      --cp-overlay: rgba(41, 41, 41, 0.88);
-      --cp-panel: rgba(41, 41, 41, 0.72);
-      --cp-panel-strong: rgba(41, 41, 41, 0.96);
-      --cp-sheen: rgba(255, 255, 255, 0.04);
-      --cp-highlight: rgba(253, 142, 161, 0.12);
+      --cp-bg: #0D1E33;
+      --cp-bg-elevated: #102A48;
+      --cp-surface: #173655;
+      --cp-surface-soft: #1D4269;
+      --cp-border: #4F7095;
+      --cp-border-strong: #83A5CA;
+      --cp-text: #FFFFFF;
+      --cp-text-muted: #CADCF0;
+      --cp-text-soft: #B4CCE6;
+      --cp-accent: #78B7FF;
+      --cp-accent-hover: #A7D1FF;
+      --cp-accent-soft: rgba(120, 183, 255, 0.18);
+      --cp-accent-fg: #0D1E33;
+      --cp-success: #75D7A5;
+      --cp-danger: #FFAAAA;
+      --cp-warning: #FFD07A;
+      --cp-link: #9CC7FF;
+      --cp-shadow: 0 16px 36px rgba(0, 0, 0, 0.30);
+      --cp-overlay: rgba(13, 30, 51, 0.92);
+      --cp-panel: rgba(23, 54, 85, 0.96);
+      --cp-panel-strong: #173655;
+      --cp-sheen: rgba(255, 255, 255, 0.06);
+      --cp-highlight: rgba(120, 183, 255, 0.16);
     }
 
     * {
@@ -178,9 +179,27 @@
       text-decoration: none;
     }
 
-    .identity span + span {
+    .identity > span + span {
       padding-left: 0.7rem;
       border-left: 1px solid var(--cp-border);
+    }
+
+    .identity .house-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+
+    .house-lockup img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .identity .house-wordmark {
+      padding: 0;
+      border: 0;
+      font-size: 0.72rem;
     }
 
     .identity small {
@@ -728,16 +747,288 @@
       }
     }
   </style>
+  <style>
+    :root {
+      --cp-bg: #f7f4ef;
+      --cp-bg-elevated: #fcfbf8;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #f5f5f5;
+      --cp-border: #dedede;
+      --cp-border-strong: #001d34;
+      --cp-text: #242424;
+      --cp-text-muted: #5c5c5c;
+      --cp-text-soft: #6f6f6f;
+      --cp-accent: #e51938;
+      --cp-accent-hover: #c81430;
+      --cp-accent-soft: rgba(229, 25, 56, 0.09);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #16a34a;
+      --cp-danger: #dc2626;
+      --cp-warning: #f59e0b;
+      --cp-link: #001d34;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.8);
+      --cp-panel: rgba(255, 255, 255, 0.86);
+      --cp-panel-strong: rgba(255, 255, 255, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.55);
+      --cp-highlight: rgba(229, 25, 56, 0.13);
+      --cp-logo-surface: #ffffff;
+      --cp-ms-red: #f25022;
+      --cp-ms-green: #7fba00;
+      --cp-ms-blue: #00a4ef;
+      --cp-ms-yellow: #ffb900;
+    }
+
+    html[data-theme="dark"] {
+      --cp-bg: #001d34;
+      --cp-bg-elevated: #06283e;
+      --cp-surface: #0b3047;
+      --cp-surface-soft: #123950;
+      --cp-border: #33566a;
+      --cp-border-strong: #e6e7e8;
+      --cp-text: #ffffff;
+      --cp-text-muted: #d2dce2;
+      --cp-text-soft: #e6e7e8;
+      --cp-accent: #e51938;
+      --cp-accent-hover: #ff405b;
+      --cp-accent-soft: rgba(229, 25, 56, 0.18);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #4ade80;
+      --cp-danger: #f87171;
+      --cp-warning: #fbbf24;
+      --cp-link: #ffffff;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+      --cp-overlay: rgba(0, 29, 52, 0.9);
+      --cp-panel: rgba(11, 48, 71, 0.86);
+      --cp-panel-strong: rgba(0, 29, 52, 0.97);
+      --cp-sheen: rgba(255, 255, 255, 0.05);
+      --cp-highlight: rgba(229, 25, 56, 0.2);
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background: repeating-linear-gradient(90deg, transparent 0, transparent 63px, var(--cp-accent-soft) 64px);
+      opacity: 0.38;
+    }
+
+    h1 {
+      max-width: 920px;
+      font-size: clamp(42px, 7vw, 82px);
+      font-weight: 750;
+      line-height: 0.98;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 44px);
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--cp-border);
+      background: var(--cp-panel-strong);
+    }
+
+    .header-inner {
+      min-height: 64px;
+    }
+
+    .brand-family {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand {
+      color: var(--cp-text);
+      text-decoration: none;
+    }
+
+    .brand img {
+      display: block;
+      width: 148px;
+      height: auto;
+      padding: 8px 10px;
+      border-radius: 4px;
+      background: var(--cp-logo-surface);
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 22px;
+      background: var(--cp-border-strong);
+    }
+
+    .microsoft-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cp-text);
+    }
+
+    .ms-mark {
+      display: grid;
+      flex: 0 0 auto;
+      grid-template-columns: repeat(2, 8px);
+      grid-template-rows: repeat(2, 8px);
+      gap: 2px;
+      width: 18px;
+      height: 18px;
+    }
+
+    .ms-mark span:nth-child(1) { background: var(--cp-ms-red); }
+    .ms-mark span:nth-child(2) { background: var(--cp-ms-green); }
+    .ms-mark span:nth-child(3) { background: var(--cp-ms-blue); }
+    .ms-mark span:nth-child(4) { background: var(--cp-ms-yellow); }
+
+    .ms-product {
+      display: grid;
+      gap: 1px;
+      line-height: 1.05;
+    }
+
+    .ms-product strong {
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .ms-product small {
+      color: var(--cp-text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .seos-label {
+      padding: 5px 8px;
+      border: 1px solid var(--cp-border);
+      border-radius: 999px;
+      color: var(--cp-text-muted);
+      font-size: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .site-nav {
+      gap: 18px;
+    }
+
+    .site-nav a,
+    .theme-button {
+      min-height: 40px;
+      padding: 8px 0;
+      border-radius: 0;
+      color: var(--cp-text-muted);
+      font-size: 14px;
+    }
+
+    .site-nav a:hover,
+    .theme-button:hover {
+      border-color: transparent;
+      background: transparent;
+      color: var(--cp-accent-hover);
+    }
+
+    .hero {
+      display: grid;
+      min-height: min(760px, calc(100vh - 64px));
+      align-content: center;
+      padding: 72px 0 48px;
+      border-bottom: 1px solid var(--cp-border);
+      background: linear-gradient(135deg, var(--cp-bg-elevated), var(--cp-bg));
+    }
+
+    .hero-summary {
+      font-size: 20px;
+    }
+
+    .accent-divider {
+      display: none;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .button,
+    .resource-card,
+    .outcome-card,
+    .workstream-card,
+    .technical-card,
+    .guide-shell,
+    .next-step,
+    .path-step,
+    .access-note {
+      border-radius: 8px;
+    }
+
+    .hero-strip {
+      border-radius: 0;
+    }
+
+    .resource-card.featured,
+    .workstream-card {
+      border-top-width: 5px;
+    }
+
+    @media (max-width: 900px) {
+      .brand-family {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand-family {
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .brand img {
+        width: 126px;
+      }
+
+      .brand-divider {
+        height: 38px;
+      }
+
+      .ms-product strong {
+        font-size: 12px;
+      }
+
+      .ms-product small {
+        font-size: 10px;
+      }
+
+      .site-nav {
+        gap: 4px;
+      }
+
+      .site-nav a,
+      .theme-button {
+        padding: 8px 6px;
+      }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="identity" href="#top" aria-label="Haworth and Microsoft AI and Sales Forward home">
-        <span>Haworth</span>
-        <span>Microsoft</span>
-        <small>AI and Sales Forward</small>
-      </a>
+      <div class="brand-family" aria-label="Haworth and Microsoft AI and Sales Forward">
+        <a class="brand" href="#top" aria-label="Haworth AI and Sales Forward home">
+          <img src="assets/haworth-wordmark.png" alt="Haworth">
+        </a>
+        <i class="brand-divider" aria-hidden="true"></i>
+        <span class="microsoft-lockup">
+          <span class="ms-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span class="ms-product">
+            <strong>Microsoft</strong>
+            <small>AI and Sales Forward</small>
+          </span>
+        </span>
+        <span class="seos-label">SE OS engagement</span>
+      </div>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#resources">Resources</a>
         <a href="#vision">Vision guide</a>
@@ -755,7 +1046,7 @@
         <h1 id="page-title">Haworth AI and Sales Forward</h1>
         <p class="hero-summary">Revisit what we have explored, use the shared collaboration space, and shape the next seller, leader, and executive experiences together.</p>
         <div class="actions">
-          <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Open Haworth ABS Customer Hub</a>
+          <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Open the SharePoint site</a>
           <a class="button" href="#vision">Explore the experience vision</a>
         </div>
         <div class="hero-strip" aria-label="Engagement at a glance">
@@ -786,9 +1077,9 @@
         <div class="resource-grid">
           <article class="resource-card featured">
             <p class="resource-meta">Current collaboration</p>
-            <h3>Haworth ABS Customer Hub</h3>
+            <h3>Haworth ABS Customer Hub (SharePoint site)</h3>
             <p>Use the Haworth SharePoint site for customer-accessible meeting artifacts and ongoing collaboration.</p>
-            <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Open customer hub</a>
+            <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Open the SharePoint site</a>
           </article>
           <article class="resource-card">
             <p class="resource-meta">September 25 meeting</p>
@@ -984,7 +1275,7 @@
             <h2 id="next-heading">Turn the sales process into two ready-now plays and one proof.</h2>
             <p>Use the focused seller-role and process session to choose the users, task, approved context, guardrails, outcome measures, and technical owners that will define the first working experience.</p>
           </div>
-          <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Continue in the customer hub</a>
+          <a class="button primary" href="https://microsoft.sharepoint.com/teams/HaworthAIandPremiumForward">Continue in SharePoint</a>
         </div>
       </div>
     </section>
